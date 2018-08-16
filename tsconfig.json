@@ -16,6 +16,13 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@vision-core/*": ["src/app/core/*"],
+      "@vision-environments/*": ["src/environments/*"],
+      "@vision-app/*": ["src/app/features/*"],
+      "@vision-shared/*": ["src/app/shared/*"],
+      "@vision-data-models/*": ["src/data-models/*"]
+    }
   }
 }

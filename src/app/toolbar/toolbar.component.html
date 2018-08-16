@@ -1,0 +1,33 @@
+<mat-toolbar class="mat-elevation-z6" color="primary">
+  <a href="https://es-la.angularmastery.com" target="_blank" fxLayout="row" fxLayoutAlign="none center">
+    <img src="../assets/ngmy.svg" width="30" height="30" class="d-inline-block align-top" alt="Angular Mastery">
+    <span fxShow="false" fxShow.gt-xs>Angular</span><span fxShow="false" fxShow.gt-xs class="ngmy">&#160;Mastery</span>
+    <div [hidden]="user">
+      <span fxHide="false" fxHide.gt-xs>Angular</span>
+      <span fxHide="false" fxHide.gt-xs class="ngmy">&#160;Mastery</span>
+    </div>
+  </a>
+
+  <div class="spacer"></div>
+  <button class="icon" *ngIf="user" (click)="navigateTo('home')" mat-icon-button>
+    <mat-icon>home</mat-icon>
+  </button>
+  <button class="icon" *ngIf="user" (click)="navigateTo('chat')" mat-icon-button>
+    <mat-icon>chat</mat-icon>
+  </button>
+  <img class="avatar" alt="User's Photo"
+       *ngIf="user"
+       [src]="user.photoURL"
+       [matMenuTriggerFor]="userMenu">
+</mat-toolbar>
+
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item (click)="navigateTo('profile')">
+    <mat-icon>settings</mat-icon>
+    <span>Settings</span>
+  </button>
+  <button mat-menu-item (click)="signOut()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Sign Out</span>
+  </button>
+</mat-menu>

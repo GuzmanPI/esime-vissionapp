@@ -1,0 +1,24 @@
+<mat-card>
+  <form fxLayout="column" [formGroup]="form"
+        (ngSubmit)="addMessage()" novalidate>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Title" formControlName="title">
+      <mat-error *ngIf="form.get('title').errors">
+        A title is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Leave a comment" formControlName="comment"></textarea>
+      <mat-error *ngIf="form.get('comment').errors">
+        A comment is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <button type="submit" mat-flat-button color="accent">SUBMIT</button>
+  </form>
+</mat-card>
+
+
+<div *ngFor="let message of messages | async">
+  <h2>{{message.title}}</h2>
+  <p>{{message.comment}}</p>
+</div>

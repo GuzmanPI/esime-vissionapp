@@ -1,0 +1,84 @@
+@import '../../node_modules/@angular/material/theming';
+
+$plumbago: (
+        50 : #eaf0f7,
+        100 : #cadaeb,
+        200 : #a7c1de,
+        300 : #83a8d0,
+        400 : #6996c6,
+        500 : #4e83bc,
+        600 : #477bb6,
+        700 : #3d70ad,
+        800 : #3566a5,
+        900 : #255397,
+        A100 : #d5e5ff,
+        A200 : #a2c6ff,
+        A400 : #6fa6ff,
+        A700 : #5697ff,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #000000,
+                500 : #ffffff,
+                600 : #ffffff,
+                700 : #ffffff,
+                800 : #ffffff,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000
+        )
+);
+
+$pink: (
+        50 : #f7eaf0,
+        100 : #ebcada,
+        200 : #dea7c1,
+        300 : #d083a8,
+        400 : #c66996,
+        500 : #bc4e83,
+        600 : #b6477b,
+        700 : #ad3d70,
+        800 : #a53566,
+        900 : #972553,
+        A100 : #ffd5e5,
+        A200 : #ffa2c6,
+        A400 : #ff6fa6,
+        A700 : #ff5697,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #000000,
+                500 : #ffffff,
+                600 : #ffffff,
+                700 : #ffffff,
+                800 : #ffffff,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000
+        )
+);
+
+// Includes common styles for Angular Material.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Defines the palettes for Ekiim's theme using custom palettes available in clients-palette.scss and users-palette.scss
+// (imported above).
+$main-primary: mat-palette($plumbago);
+$main-accent: mat-palette($pink);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$main-theme: mat-light-theme($main-primary, $main-accent);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($main-theme);

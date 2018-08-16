@@ -1,0 +1,29 @@
+h1 {
+    color: rgba(0,0,0,.87);
+    font-weight: 300;
+    padding-bottom: 25px;
+}
+
+img {
+    height: 60px;
+    margin-bottom: -18px;
+}
+
+.vision-logo {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.title {
+    color: rgba(0,0,0,.87);
+    font-weight: 300;
+    padding-bottom: 25px;
+}
+
+.info-card {
+    max-width: 400px;
+}
+
+.info-container {
+    margin-top: 30px;
+}

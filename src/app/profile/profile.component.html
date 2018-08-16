@@ -1,0 +1,8 @@
+<mat-card class="profile-card">
+  <mat-card-header>
+    <div mat-card-avatar
+         [ngStyle]="{'background-image': 'url(' + user.photoURL + ')', 'background-size': 'cover'}"></div>
+    <mat-card-title>{{user.displayName}}</mat-card-title>
+    <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
