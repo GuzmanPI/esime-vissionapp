@@ -8,17 +8,35 @@
       </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Leave a comment" formControlName="comment"></textarea>
-      <mat-error *ngIf="form.get('comment').errors">
-        A comment is <strong>required</strong>
+      <input matInput placeholder="Icon" formControlName="icon">
+      <mat-error *ngIf="form.get('icon').errors">
+        An icon is <strong>required</strong>
       </mat-error>
     </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Leave a thought" formControlName="thought"></textarea>
+      <mat-error *ngIf="form.get('thought').errors">
+        A thought is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br/>
     <button type="submit" mat-flat-button color="accent">SUBMIT</button>
   </form>
 </mat-card>
 
+<h1>Quotes</h1>
 
-<div *ngFor="let message of messages | async">
-  <h2>{{message.title}}</h2>
-  <p>{{message.comment}}</p>
-</div>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let thought of thoughts | async">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>{{thought.icon}}</mat-icon>
+        {{thought.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{thought.author}} - {{thought.timestamp.toDate() | date:'medium'}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{thought.content}}</p>
+  </mat-expansion-panel>
+</mat-accordion>

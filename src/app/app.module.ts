@@ -3,7 +3,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule, MatExpansionModule,
+  MatIconModule,
+  MatInputModule,
+  MatMenuModule,
+  MatToolbarModule
+} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {AngularFireModule} from 'angularfire2';
@@ -38,6 +45,7 @@ import {ChatComponent} from './chat/chat.component';
     MatIconModule,
     MatButtonModule,
     MatInputModule,
+    MatExpansionModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
