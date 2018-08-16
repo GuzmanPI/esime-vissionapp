@@ -23,7 +23,7 @@ import {AppComponent} from './app.component';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {HomeComponent} from './home/home.component';
 import {ProfileComponent} from './profile/profile.component';
-import {ChatComponent} from './chat/chat.component';
+import {QuotesComponent} from './quotes/quotes.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import {ChatComponent} from './chat/chat.component';
     ToolbarComponent,
     HomeComponent,
     ProfileComponent,
-    ChatComponent
+    QuotesComponent
   ],
   imports: [
     CommonModule,

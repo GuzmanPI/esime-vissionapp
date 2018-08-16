@@ -11,10 +11,10 @@ import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-chat',
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css']
+  templateUrl: './quotes.component.html',
+  styleUrls: ['./quotes.component.css']
 })
-export class ChatComponent implements OnInit {
+export class QuotesComponent implements OnInit {
   thoughtsCollections: AngularFirestoreCollection<Quote>;
   thoughts: Observable<Quote[]>;
   user: any;
