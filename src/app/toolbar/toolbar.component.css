@@ -1,5 +1,7 @@
 mat-toolbar {
     color: white;
+    position: fixed;
+    z-index: 1;
 }
 
 .ngmy {

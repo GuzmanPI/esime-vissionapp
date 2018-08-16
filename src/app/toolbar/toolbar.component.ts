@@ -1,10 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {Observable, Subscription} from 'rxjs';
+import {Subscription} from 'rxjs';
 
 import {AuthService} from '../auth.service';
 import {AngularFireAuth} from 'angularfire2/auth';
+
+import {User} from '../data-models/models';
 
 @Component({
   selector: 'app-toolbar',
@@ -12,7 +14,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
-  user: any;
+  user: User;
   userSubscription: Subscription;
 
   constructor(public authService: AuthService, private router: Router, public angularFireAuth: AngularFireAuth) {

@@ -4,12 +4,14 @@ import {AngularFireAuth} from 'angularfire2/auth';
 
 import {Observable, Subscription} from 'rxjs';
 
+import {User} from './data-models/models';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService implements OnDestroy {
   private authStateSubscription: Subscription;
-  authState: any = null;
+  authState: User = null;
 
   constructor(private angularFireAuth: AngularFireAuth) {
     this.authStateSubscription = this.angularFireAuth.authState.subscribe((authState: any | null) => {

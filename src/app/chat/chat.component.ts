@@ -5,6 +5,8 @@ import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firesto
 import * as firebase from 'firebase';
 
 import {Observable} from 'rxjs';
+
+import {Quote} from '../data-models/models';
 import {AuthService} from '../auth.service';
 
 @Component({
@@ -13,8 +15,8 @@ import {AuthService} from '../auth.service';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
-  thoughtsCollections: AngularFirestoreCollection<any>;
-  thoughts: Observable<any[]>;
+  thoughtsCollections: AngularFirestoreCollection<Quote>;
+  thoughts: Observable<Quote[]>;
   user: any;
 
   form = new FormGroup({
@@ -37,13 +39,15 @@ export class ChatComponent implements OnInit {
     if (this.form.status) {
       const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 
-      this.thoughtsCollections.add({
+      const newCuote: Quote = {
         author: this.user.displayName,
         timestamp: timestamp,
         title: this.form.get('title').value.trim(),
         icon: this.form.get('icon').value.trim(),
         content: this.form.get('thought').value.trim()
-      });
+      };
+
+      this.thoughtsCollections.add(newCuote);
     }
   }
 
