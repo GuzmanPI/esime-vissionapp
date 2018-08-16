@@ -14,31 +14,14 @@ import {User} from '../data-models/models';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
-  user: User;
-  userSubscription: Subscription;
 
-  constructor(public authService: AuthService, private router: Router, public angularFireAuth: AngularFireAuth) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.userSubscription = this.authService.appUserObservable().subscribe(user => {
-      this.user = user;
-    });
-  }
-
-  navigateTo(url: string): void {
-    this.router.navigateByUrl(url);
-  }
-
-  signOut() {
-    this.angularFireAuth.auth.signOut()
-      .then(() => {
-        this.router.navigateByUrl('/');
-      });
   }
 
   ngOnDestroy(): void {
-    this.userSubscription.unsubscribe();
   }
 
 }

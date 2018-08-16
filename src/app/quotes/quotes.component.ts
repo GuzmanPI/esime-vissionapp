@@ -15,10 +15,6 @@ import {AuthService} from '../auth.service';
   styleUrls: ['./quotes.component.css']
 })
 export class QuotesComponent implements OnInit {
-  thoughtsCollections: AngularFirestoreCollection<Quote>;
-  thoughts: Observable<Quote[]>;
-  user: any;
-
   form = new FormGroup({
     title: new FormControl('', {validators: [Validators.required]}),
     icon: new FormControl('', {validators: [Validators.required]}),
@@ -29,26 +25,5 @@ export class QuotesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.thoughtsCollections = this.angularFirestore.collection('thoughts');
-    this.thoughts = this.thoughtsCollections.valueChanges();
-
-    this.user = this.authService.authState;
   }
-
-  addMessage(): void {
-    if (this.form.status) {
-      const timestamp = firebase.firestore.FieldValue.serverTimestamp();
-
-      const newCuote: Quote = {
-        author: this.user.displayName,
-        timestamp: timestamp,
-        title: this.form.get('title').value.trim(),
-        icon: this.form.get('icon').value.trim(),
-        content: this.form.get('thought').value.trim()
-      };
-
-      this.thoughtsCollections.add(newCuote);
-    }
-  }
-
 }

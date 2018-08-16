@@ -9,13 +9,9 @@ import {Observable} from 'rxjs';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  user: any;
-
-  constructor(private authService: AuthService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.user = this.authService.authState;
   }
 
 }
