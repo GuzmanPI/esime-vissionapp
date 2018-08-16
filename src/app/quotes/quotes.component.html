@@ -36,7 +36,7 @@
           <mat-icon>{{thought.icon}}</mat-icon>
           {{thought.title}}
         </mat-panel-title>
-        <mat-panel-description>
+        <mat-panel-description fxShow="false" fxShow.gt-xs>
           {{thought.author}} - {{thought.timestamp.toDate() | date:'medium'}}
         </mat-panel-description>
       </mat-expansion-panel-header>
