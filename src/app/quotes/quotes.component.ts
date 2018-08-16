@@ -10,7 +10,7 @@ import {Quote} from '../data-models/models';
 import {AuthService} from '../auth.service';
 
 @Component({
-  selector: 'app-chat',
+  selector: 'app-quotes',
   templateUrl: './quotes.component.html',
   styleUrls: ['./quotes.component.css']
 })
